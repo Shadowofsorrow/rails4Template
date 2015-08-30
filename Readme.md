@@ -2,7 +2,7 @@
 
 Added MongoDB, Cucumber, Haml, Jasmine, Puma and Devise authentication.
 
-#Gem Spec
+## Gem Spec ##
 
 * gem 'rails', '4.2.4'
 * gem 'devise', '>= 3.5.1'
@@ -18,4 +18,6 @@ Added MongoDB, Cucumber, Haml, Jasmine, Puma and Devise authentication.
 * gem 'minitest-rails'
 * gem 'jasmine-rails'
 
-Using Puma server...
+### Server Using Puma  ###
+
+> *Using Puma server...*
