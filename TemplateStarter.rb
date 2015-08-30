@@ -83,9 +83,10 @@ append_file '.gitignore', <<-END
 /log
 /tmp
 END
-append_file 'config.ru', <<-PUMA
-#\\-s puma
-PUMA
+
+# append_file 'config.ru', <<-PUMA
+# #\\-s puma
+# PUMA
 
 # TODO: Adding Git Repository And Commit the changes...
 
