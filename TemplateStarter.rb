@@ -19,11 +19,11 @@ end
 
 # \===========-*-*-*-=========== [Append Gem] ===========-*-*-*-===========/
 
-gem "bootstrap-sass", ">= 3.3.5.1"
-gem "pry-rails", ">= 0.3.4"
-gem "pry-byebug", ">= 3.2.0"
-gem "puma", ">= 2.13.4"
-gem "redcarpet", ">= 3.3.2"
+# gem "bootstrap-sass"
+gem "pry-rails"
+gem "pry-byebug"
+gem "puma"
+gem "redcarpet"
 
 # \=========================\ [Testing Gem] /=========================/
 
@@ -36,39 +36,28 @@ end
 
 gem_group :test, :development do
   gem 'cucumber-rails', :require => false
-  gem 'capybara', '>= 2.5.0'
-end
-after_bundler do
-  generate "cucumber:install"
+  gem 'capybara'
 end
 
 # \===========-*-*-*-============= [Devise] ==============-*-*-*-===========/
 
-gem 'devise', '>= 3.5.1'
+gem 'devise'
 
-after_bundler do
-  generate 'devise:install'
-  generate 'devise user'
-end
 
 # \===========-*-*-*-============== [Haml] ==============-*-*-*-===========/
 
-gem 'haml', '>= 4.0.7'
-gem 'haml-rails', '>= 0.9.0'
+gem 'haml-rails'
 
 
 # \===========-*-*-*-============ [Mongoid] ============-*-*-*-===========/
 
 gem 'bson_ext'
-gem 'mongoid', '>= 5.0.0.rc0'
+gem 'mongoid', '>= 1.5.3'
 
-after_bundler do
-  generate 'mongoid:config'
-end
 
 # \===========-*-*-*-=========== [Miscelanous] ===========-*-*-*-===========/
 
-environment "config.sass.preferred_syntax = :sass"
+environment "config.sass.preferred_syntax = :scss"
 
 # -*===========================\  [Excecution]  /===========================*-
 
@@ -84,14 +73,15 @@ append_file '.gitignore', <<-END
 /tmp
 END
 
-# append_file 'config.ru', <<-PUMA
-# #\\-s puma
-# PUMA
-
-# TODO: Adding Git Repository And Commit the changes...
+# -*===========================\  [Bundler]  /===========================*-
 
 after_bundle do
+  generate 'devise:install'
+  generate 'devise user'
+  generate "cucumber:install"
+  generate 'mongoid:config'
+  # Adding Git Repository And Commit the changes...
   git :init
   git add: '.'
-  git commit: '-m "Started up the App"'
+  git commit: '-m "First Run"'
 end
