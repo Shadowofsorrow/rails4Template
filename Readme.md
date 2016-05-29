@@ -18,7 +18,7 @@ Added MongoDB, Cucumber, Haml, Jasmine, Puma and Devise authentication.
 
 ### Server Using Puma  ###
 
-> To use Rails with Mongo just add --skip-activerecord when you build your new app
+> To use Rails with Mongo just add --skip-active-record when you build your new app
 > *Example using windows*
 > . put the template everywhere in your drive and when you want to use it just call it
 > "rails new yourappname -m C:\Users\$yourusername$\Desktop\TemplateStarter.rb -T --skip-active-record"
